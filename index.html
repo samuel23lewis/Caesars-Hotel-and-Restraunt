@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">Sea Shell</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#book">Rooms</a></li>
+                <li><a href="#dining">Dining</a></li>
+                <li><a href="#booking">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <div id="home"> 
+        <section class="home">
+            <div class="welcome-text fade-up visible">
+                <h1>Welcome to Sea Shell</h1>
+                <p>Your perfect destination begins here.</p>
+                <a href="#book" class="cta-button">Book Now</a>
+            </div>
+        </section>
+    </div> 
+    
+    <!-- Rooms Section -->
+    <div id="book">
+        <section class="rooms">
+            <h2 class="fade-up">Our Rooms</h2>
+            <div class="room-container">
+
+                <!-- Room 1 -->
+                <div class="room-card fade-up">
+                    <img src="img.jpg" alt="Luxury Suite">
+                    <h3>Luxury Suite</h3>
+                    <p>Experience the ultimate in comfort with our luxury suites, featuring spacious rooms, premium amenities, and breathtaking views.</p>
+                    <p class="price">From $350/night</p>
+                    <a href="#booking" class="book-btn" onclick="openBookingModal(350)">Book Now</a>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="room-card fade-up">
+                    <img src="images.jpeg" alt="Deluxe Room">
+                    <h3>Deluxe Room</h3>
+                    <p>Perfect for travelers seeking luxury at an affordable rate, our Deluxe Rooms provide the perfect blend of comfort and style.</p>
+                    <p class="price">From $250/night</p>
+                    <a href="#booking" class="book-btn" onclick="openBookingModal(250)">Book Now</a>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="room-card fade-up">
+                    <img src="images (1).jpeg" alt="Family Suite">
+                    <h3>Family Suite</h3>
+                    <p>Our Family Suites are designed to accommodate larger groups or families, offering extra space and amenities for a home-away-from-home feel.</p>
+                    <p class="price">From $400/night</p>
+                    <a href="#booking" class="book-btn" onclick="openBookingModal(400)">Book Now</a>
+                </div>
+
+                <!-- Room 4 -->
+                <div class="room-card fade-up">
+                    <img src="img.jpg" alt="Penthouse Suite">
+                    <h3>Penthouse Suite</h3>
+                    <p>Indulge in the ultimate luxury with our exclusive Penthouse Suite, featuring a private terrace, jacuzzi, and panoramic city views.</p>
+                    <p class="price">From $1,200/night</p>
+                    <a href="#booking" class="book-btn" onclick="openBookingModal(1200)">Book Now</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Dining Section -->
+    <div id="dining">
+        <section class="dining">
+            <h2 class="fade-up">Our Dining Options</h2>
+            <div class="dining-container">
+
+                <!-- Dining Option 1 -->
+                <div class="dining-card fade-up">
+                    <img src="veg.jpg" alt="Vegetarian Buffet">
+                    <h3>Vegetarian Buffet</h3>
+                    <p>Enjoy a delightful array of fresh and healthy vegetarian dishes, carefully prepared to nourish both body and soul.</p>
+                    <p class="price">$50/person</p>
+                    <button type="button" class="book-btn" onclick="openDiningModal('Vegetarian Buffet', 50)">Book Now</button>
+                </div>
+
+                <!-- Dining Option 2 -->
+                <div class="dining-card fade-up">
+                    <img src="nveg.jpeg" alt="Non-Vegetarian Buffet">
+                    <h3>Non-Vegetarian Buffet</h3>
+                    <p>Indulge in a lavish spread of non-vegetarian delights, featuring mouth-watering meats and seafood for every taste.</p>
+                    <p class="price">$75/person</p>
+                    <button type="button" class="book-btn" onclick="openDiningModal('Non-Vegetarian Buffet', 75)">Book Now</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div id="booking">
+        <section class="booking fade-up">
+            <h6>Your Bookings</h6> 
+            <p>"Your booking will appear once you have booked"</p>
+        </section>
+    </div>
+
+    <!-- Dining Booking Modal -->
+    <div id="dining-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDiningModal()">&times;</span>
+            <h2>Book Your Dining Experience</h2>
+            <form id="dining-form">
+                <input type="text" id="dining-guest-name" placeholder="Enter your name" required>
+                <input type="text" id="dining-phone-number" placeholder="Enter your phone number" required pattern="\d{10}" title="Enter a 10-digit phone number">
+                <label for="dining-date">Date:</label>
+                <input type="date" id="dining-date" required>
+                <label for="dining-time">Select Time:</label>
+                <select id="dining-time" required>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+                <label for="dining-guests">Number of Guests:</label>
+                <input type="number" id="dining-guests" min="1" value="1" required>
+                <input type="hidden" id="dining-price-per-person">
+                <button type="button" id="confirm-dining-booking-btn">Confirm Dining</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dining Confirmation Section -->
+    <section class="booking-confirmation" id="dining-confirmation">
+        <div class="confirmation-content">
+            <h2>Dining Booking Confirmed</h2>
+            <p id="dining-confirmation-message"></p>
+            <div class="booking-details">
+                <p><strong>Invoice Number:</strong> <span id="dining-invoice-number"></span></p>
+                <p><strong>Total Bill:</strong> $<span id="dining-total-bill"></span></p>
+                <p><strong>Dining Cost:</strong> $<span id="dining-total-cost"></span></p>
+                <p><strong>Number of Guests:</strong> <span id="dining-guests-confirmation"></span></p>
+                <p><strong>Date:</strong> <span id="dining-date-confirmation"></span></p>
+                <p><strong>Time:</strong> <span id="dining-time-confirmation"></span></p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Booking Modal -->
+<div id="booking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeBookingModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form id="booking-form">
+            <input type="text" id="guest-name" placeholder="Enter your name" required>
+            <input type="text" id="phone-number" placeholder="Enter your phone number" required>
+            <label for="checkin-date">Check-in:</label>
+            <input type="date" id="checkin-date" required>
+            <label for="checkout-date">Check-out:</label>
+            <input type="date" id="checkout-date" required>
+            <input type="hidden" id="room-price">
+            <button type="button" id="confirm-booking-btn">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<!-- Booking Confirmation Section (hidden by default) -->
+<section class="booking-confirmation" id="booking-confirmation">
+    <div class="confirmation-content">
+        <h2>Booking Confirmed</h2>
+        <p id="confirmation-message"></p>
+        <div class="booking-details">
+            <p><strong>Invoice Number:</strong> <span id="invoice-number"></span></p>
+            <p><strong>Total Bill:</strong> $<span id="total-bill"></span></p>
+            <p><strong>Room Cost:</strong> $<span id="room-total-cost"></span></p>
+            <p><strong>Number of Days:</strong> <span id="days-stayed"></span></p>
+            <p><strong>Check-in:</strong> <span id="checkin-confirmation"></span></p>
+            <p><strong>Check-out:</strong> <span id="checkout-confirmation"></span></p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+
+<div id="contact">
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo">Sea Shell</span>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#book">Rooms</a></li>
+                    <li><a href="#dining">Dining</a></li>
+                    <li><a href="#booking">Bookings</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Contact Us:</strong></p>
+                <p>Email: info@seashellhotel.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-social">
+                <p><strong>Follow Us:</strong></p>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="x-icon.svg" alt="Twitter"></a>
+                <a href="#"><img src="instagram_icon.webp" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sea Shell Hotel. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>

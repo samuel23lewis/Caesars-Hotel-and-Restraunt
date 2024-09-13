@@ -1,0 +1,486 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Colors */
+:root {
+    --navy-blue: #001f3f; /* Midnight navy blue */
+    --light-gray: #f4f4f4;
+    --gold: #d4af37;      /* Accent color for buttons */
+    --white: #ffffff;
+    --light-blue: #3498db; /* Lighter accent for hover */
+}
+
+/* Header */
+.header {
+    background-color: var(--navy-blue);
+    padding: 20px 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo a {
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-decoration: none;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--light-blue);
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home .welcome-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.home .welcome-text p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color:#d4af37;
+}
+
+.cta-button {
+    background-color: var(--gold);
+    color: var(--navy-blue);
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+}
+
+.cta-button:hover {
+    background-color: var(--light-blue);
+}
+
+/* Rooms Section */
+.rooms {
+    background-color: var(--light-gray);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.rooms h2 {
+    color: var(--navy-blue);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.room-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.room-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--navy-blue);
+}
+
+.room-card h3 {
+    color: var(--navy-blue);
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.room-card p {
+    color: #555;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.book-btn {
+    background-color: var(--gold);
+    color: var(--navy-blue);
+    padding: 10px 20px;
+    border: none;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.book-btn:hover {
+    background-color: var(--light-blue);
+}
+
+/* Dining Section */
+.dining {
+    background-color: var(--light-gray);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.dining h2 {
+    color: var(--navy-blue);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.dining-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dining-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.dining-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--navy-blue);
+}
+
+.dining-card h3 {
+    color: var(--navy-blue);
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.dining-card p {
+    color: #555;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.dining-card .price {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
+/* Dining Confirmation Section */
+.dining-confirmation {
+    display: none;
+    padding: 30px;
+    background-color: var(--light-gray);
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-content h2 {
+    font-size: 2rem;
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+}
+
+.dining-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.dining-details strong {
+    color: var(--navy-blue);
+}
+
+#dining-total, #dining-option, #dining-guests {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+
+/* Modal Style */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-height: 120%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content label {
+    font-size: 1rem;
+    color: var(--navy-blue);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--navy-blue);
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--gold);
+    color: var(--navy-blue);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: var(--light-blue);
+}
+
+/* Booking Confirmation Section */
+.booking-confirmation {
+    display: none;
+    padding: 30px;
+    background-color: var(--light-gray);
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-content h2 {
+    font-size: 2rem;
+    color: var(--navy-blue);
+    margin-bottom: 20px;
+}
+
+.booking-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.booking-details strong {
+    color: var(--navy-blue);
+}
+
+#total-bill, #invoice-number, #duration {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.booking h6 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 30px;
+    margin-bottom: -20px;
+    background-color: white;
+}
+
+.booking p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+    padding-bottom: 20px;
+}
+
+.footer {
+    background-color:  var(--navy-blue); /* Royal Navy Blue */
+    color: #FFFFFF; /* White */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #F4C542; /* Gold */
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links ul li {
+    margin: 0 15px;
+}
+
+.footer-links ul li a {
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin: 20px 0;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer-social {
+    margin: 20px 0;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #B0B0B0; /* Gray */
+}
+
+
+/* Define the animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Move down by 50px */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move back to original position */
+    }
+}
+
+/* Add the default hidden state to all the sections/cards that will animate */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px down */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Once the element is visible, apply the animation */
+.fade-up.visible {
+    animation: fadeUp 1s ease-out forwards;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
